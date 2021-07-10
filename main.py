@@ -17,7 +17,7 @@ from func_vars import *
 options = webdriver.ChromeOptions()
 options.headless=True
 # browser = Chrome(executable_path='/usr/local/bin/chromedriver', options=options)  # Launches browswer.
-browser = webdriver.Remote("http://127.0.0.1:4444/wd/hub", options=options)  # with 'docker run -d -p 4444:4444 selenium/standalone-chrome' already running
+browser = webdriver.Remote(command_executor='chrome:4444/wd/hub', options=options)  # with 'docker run -d -p 4444:4444 selenium/standalone-chrome' already running
 browser.implicitly_wait(2)
 
 
